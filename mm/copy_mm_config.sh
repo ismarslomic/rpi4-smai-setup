@@ -17,7 +17,7 @@ function displayUsage() {
 function main() {
   e_header "Copying Magic Mirror Configuration"
 
-  if [ $# -ne 1 ]; then
+  if [ $# -ne 3 ]; then
     displayUsage
     exit 1
   fi
