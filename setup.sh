@@ -30,8 +30,9 @@ function main() {
   e_header "Starting Smart Mirror AI setup of your Raspberry Pi 4"
 
   # Read required input from user
+  e_note "Before we start, we need some input from you"
   read -p "WiFi name (SSID): " wifi_ssid
-  read -sp "WiFi password: " wifi_passphrase
+  read -p "WiFi password: " wifi_passphrase
 
   read -p "OS locale (default: 'nb_NO.UTF-8', first field in /usr/share/i18n/SUPPORTED): " os_locale
   os_locale="${os_locale:="nb_NO.UTF-8"}"
@@ -51,13 +52,15 @@ function main() {
   read -p "OpenWeather API key (create one at https://home.openweathermap.org/api_keys): " ow_api_key
   ow_api_key="${ow_api_key:=""}"
 
+  e_success "That's all we need, thanks!"
+
   upgrade
 
   # Rpi config
   bash "$DIR"/ssh/enable_ssh.sh
   bash "$DIR"/boot_splash/disable_boot_splash.sh
   bash "$DIR"/boot_behaviour/set_desktop_auto_login.sh
-  bash "$DIR"/wifi/configure_wifi.sh "$ssid" "$passphrase"
+  bash "$DIR"/wifi/configure_wifi.sh "$wifi_ssid" "$wifi_passphrase"
   bash "$DIR"/camera/enable_rpi_camera.sh
   bash "$DIR"/locale/change_locale.sh "$os_locale" "$keyboard_layout"
   bash "$DIR"/timezone/change_timezone.sh "$timezone"
