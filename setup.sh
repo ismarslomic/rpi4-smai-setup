@@ -81,9 +81,10 @@ function main() {
 
   cleanUp
 
-  e_success "Setup completed, rebooting"
+  e_success "Setup completed, we need to take a quick reboot"
+  read -p "Press any key to continue..."
 
-  reboot
+  sudo reboot
 }
 
 main
