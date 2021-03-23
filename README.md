@@ -59,12 +59,13 @@ your spec as well.
 - Fresh installation of _Raspberry Pi OS with Desktop_ (Buster) installed (tip: use [Raspberry Pi Imager](https://www.raspberrypi.org/software/))
 - You are logged in as default user `pi` in Rpi
 - Raspberry Pi Camera Module v2 connected
+- Your Rpi is connected to the internet, either through WiFi or wired  
 - [OpenWeather API key](https://home.openweathermap.org/api_keys) in order to use the default 
   modules [currentweather](https://docs.magicmirror.builders/modules/currentweather.html)
   and [weatherforecast](https://docs.magicmirror.builders/modules/weatherforecast.html)
 
 ## Installation
-Open Terminal in Rpi and execute these commands
+Open Terminal in Rpi and execute these commands (might take a couple of minutes, be patient)
 ````shell
 git clone https://github.com/ismarslomic/rpi4-smai-setup.git /home/pi/rpi4-smai-setup
 
@@ -78,6 +79,11 @@ sure to run all necessary scripts (in sub-folders).
 If you later want to do the adjustments you should avoid doing those directly in MagicMirror folder
 or in general on Rpi OS, but rather adjust existing scripts or add new one to make sure that all
 setup is automated and version controlled.
+
+## Learning Rpi to recognise your face correctly
+If you are new to face recognition (I was at least) I recommend that you spend some time learning about it
+from these two tutorials: [Face recognition with OpenCV, Python, and deep learning](https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/)
+and [Raspberry Pi Face Recognition](https://www.pyimagesearch.com/2018/06/25/raspberry-pi-face-recognition/)
 
 ## Controlling MagicMirror² via PM2
 With your MagicMirror running via PM2, you have some handy tools at hand:
@@ -104,7 +110,15 @@ pm2 show mm
 hostname -I
 `````
 
+You can also just use the Rpi hostname `raspberrypi.local`.
+
 ### Connect through ssh
 `````shell
 ssh pi@<IP address>
 `````
+
+## Known issues and FAQ
+1. During running `setup.sh` I see errors such as `perl: warning: Setting locale failed.` and `locale: Cannot set XX to default locale: No such file or directory`.
+This will be fixed after reboot, don't worry!
+2. I don't see current and forecast weather modules in Magic Mirror. Check your [OpenWeather API key](https://home.openweathermap.org/api_keys) in `/home/pi/MagicMirror/config/config.js` file
+3. MagicMirror doesn't automatically start after reboot. Open terminal, execute command `/home/pi/rpi4-smai-setup/pm2/pm2.sh` and reboot
