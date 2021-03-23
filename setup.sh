@@ -74,6 +74,7 @@ function main() {
   bash "$DIR"/mm/node.sh
   bash "$DIR"/mm/magic_mirror.sh
   bash "$DIR"/mm_modules/install_mmm_smart_touch.sh
+  bash "$DIR"/mm_modules/install_mmm_face_reco_dnn_deps.sh
   bash "$DIR"/mm_modules/install_mmm_face_reco_dnn.sh
   bash "$DIR"/mm_modules/install_mmm-face-multi-user-recognition-smai.sh
   bash "$DIR"/pm2/pm2.sh
