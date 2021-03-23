@@ -22,7 +22,7 @@ Eben Kouao which you can read more about at
 ## What is automated
 - [MagicMirror²](https://magicmirror.builders/) installation
 - [MagicMirror²](https://magicmirror.builders/) module 
-  [MMM-Face-Multi-User-Recognition-SMAI](https://github.com/jimbydude/MMM-Face-Multi-User-Recognition-SMAI) 
+  [MMM-Face-Multi-User-Recognition-SMAI](https://github.com/ismarslomic/MMM-Face-Multi-User-Recognition-SMAI) (forked)
   installation for multi-user face recognition and personalised content
 - [MagicMirror²](https://magicmirror.builders/) module [MMM-Face-Reco-DNN](https://github.com/nischi/MMM-Face-Reco-DNN)
   installation with required libs for face recognition with Open CV and Deep Neural Network
