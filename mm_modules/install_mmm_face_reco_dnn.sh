@@ -13,7 +13,7 @@ trap e_onScriptFailed 1 2 3 15 ERR
 function main() {
   e_header "Installing Magic Mirror module: MMM-Face-Reco-DNN"
 
-  git clone https://github.com/ismarslomic/MMM-Face-Reco-DNN.git ~/MagicMirror/modules/MMM-Face-Reco-DNN
+  git clone https://github.com/nischi/MMM-Face-Reco-DNN.git ~/MagicMirror/modules/MMM-Face-Reco-DNN
   (cd ~/MagicMirror/modules/MMM-Face-Reco-DNN && npm install)
 
   e_success "Installing MMM-Face-Reco-DNN module completed"
