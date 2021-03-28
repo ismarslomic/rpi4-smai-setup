@@ -73,6 +73,7 @@ function main() {
   # Smart Mirror
   bash "$DIR"/mm/node.sh
   bash "$DIR"/mm/magic_mirror.sh
+  bash "$DIR"/mm/create_custom_css.sh
   bash "$DIR"/mm_modules/install_mmm_smart_touch.sh
   bash "$DIR"/mm_modules/install_mmm_face_reco_dnn_deps.sh
   bash "$DIR"/mm_modules/install_mmm_face_reco_dnn.sh
