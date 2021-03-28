@@ -12,7 +12,7 @@ trap e_onScriptFailed 1 2 3 15 ERR
 function main() {
   e_header "Installing Magic Mirror module: MMM-SmartTouch"
 
-  git clone https://github.com/EbenKouao/MMM-SmartTouch.git ~/MagicMirror/modules/MMM-SmartTouch
+  git clone https://github.com/ismarslomic/MMM-SmartTouch.git ~/MagicMirror/modules/MMM-SmartTouch
   (cd ~/MagicMirror/modules/MMM-SmartTouch && npm install)
 
   e_success "Installing MMM-SmartTouch module completed"
