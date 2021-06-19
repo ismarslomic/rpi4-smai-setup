@@ -122,3 +122,52 @@ ssh pi@<IP address>
 This will be fixed after reboot, don't worry!
 2. I don't see current and forecast weather modules in Magic Mirror. Check your [OpenWeather API key](https://home.openweathermap.org/api_keys) in `/home/pi/MagicMirror/config/config.js` file
 3. MagicMirror doesn't automatically start after reboot. Open terminal, execute command `/home/pi/rpi4-smai-setup/pm2/pm2.sh` and reboot
+
+
+## Get the latest updated
+
+### Upgrade Rpi OS
+`````shell
+sudo apt-get update
+sudo apt-get upgrade -y
+`````
+
+### Upgrade MagicMirror
+To get latest version of MagicMirror you should follow the 
+[Upgrade Guide](https://docs.magicmirror.builders/getting-started/upgrade-guide.html) 
+and also read the [Changelog](https://github.com/MichMich/MagicMirror/blob/master/CHANGELOG.md).
+`````shell
+cd ~/MagicMirror
+git pull && npm install
+`````
+
+### Upgrade MagicMirror modules
+For each module found in folder `~/MagicMirror/modules` do following:
+`````shell
+cd ~/MagicMirror/modules/<module name>
+git pull && npm install
+`````
+
+## Change the screen orientation
+The simplest way to change screen orientation is to use the Desktop:
+
+Pi icon => Preferences => Screen configuration => Orientation => normal/right/inverted/left => Save
+
+## Change the IR Frame orientation
+`````shell
+# Create bash script for setting the IR Frame orientation
+vim /home/pi/xin.sh
+
+# Add following content to the file
+DISPLAY=:0.0 xinput --set-prop "Multi touch   Multi touch overlay device" "Coordinate Transformation Matrix" 0 1 0 -1 0 1 0 0 1
+
+# Make the file executable
+chmod +x /home/pi/xin.sh
+
+# To run the bash script automatically on startup
+sudo vim /etc/xdg/lxsession/LXDE-pi/autostart
+
+# Add following command, before @xscreensaver
+@/usr/bin/bash /home/pi/xin.sh
+@xscreensaver -no-splash
+`````
