@@ -26,3 +26,14 @@ function monitorOn(){
 function monitorStatus(){
   vcgencmd display_power
 }
+
+function monitorStatusBinary(){
+  STATUS="(vcgencmd display_power | tail -c 2 | head -c 1)"
+  if [ $(STATUS) = 1 ]; then
+    echo 0
+    exit 0
+  else
+    echo -1
+    exit 0
+  fi
+}

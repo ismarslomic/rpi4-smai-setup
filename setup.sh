@@ -81,6 +81,9 @@ function main() {
   bash "$DIR"/pm2/pm2.sh
   bash "$DIR"/mm/copy_mm_config.sh "$mm_language" "$ow_location" "$ow_api_key"
 
+  # Home assistant bash scripts
+  bash "$DIR"/ha_scripts/copy_ha_scripts.sh
+
   cleanUp
 
   e_success "Setup completed, we need to take a quick reboot"

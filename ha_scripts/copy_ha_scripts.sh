@@ -10,13 +10,10 @@ source "$DIR/../log_util/log.sh"
 trap e_onScriptFailed 1 2 3 15 ERR
 
 function main() {
-  e_header "Installing useful tools"
+  e_header "Copying HA bash scripts"
+  cp -R "$DIR" ~/ha_scripts
 
-  sudo apt-get install -y xclip \
-    vim \
-    jq
-
-  e_success "Installing useful tools completed"
+  e_success "Copying HA bash scripts completed"
 }
 
 main
