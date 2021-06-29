@@ -60,7 +60,7 @@ var config = {
         calendars: [
           {
             symbol: "calendar-check",
-            url: "http://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"
+            url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"
           }
         ]
       }
@@ -70,22 +70,26 @@ var config = {
       position: "lower_third"
     },
     {
-      module: "currentweather",
+      module: "weather",
       position: "top_right",
       config: {
+        weatherProvider: "openweathermap",
+        type: "current",
         location: "${OW_LOCATION}",
         locationID: "", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-        appid: "${OW_API_KEY}"
+        apiKey: "${OW_API_KEY}"
       }
     },
     {
-      module: "weatherforecast",
+      module: "weather",
       position: "top_right",
       header: "Weather Forecast",
       config: {
+        weatherProvider: "openweathermap",
+        type: "forecast",
         location: "${OW_LOCATION}",
         locationID: "", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
-        appid: "${OW_API_KEY}"
+        apiKey: "${OW_API_KEY}"
       }
     },
     {
