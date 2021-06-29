@@ -18,6 +18,7 @@ Eben Kouao which you can read more about at
 ## Software features
 - Touchscreen interaction (requires hardware, see below)
 - Face recognition (requires hardware, see below) with personalised content
+- Integration with home automation system Home Assistant, read more at [ha_scripts](ha_scripts/README.md)
   
 ## What is automated
 - [MagicMirror²](https://magicmirror.builders/) installation
@@ -51,9 +52,8 @@ your spec as well.
 - [ICY Box](https://www.komplett.no/product/1140767/datautstyr/pc-komponenter/hovedkort/tilbehoer/icy-box-clear-acrylic-and-frameless-case) including fan and heat sinks
 - [Micro HDMI cable](https://www.kjell.com/no/produkter/lyd-og-bilde/kabler-og-adaptere/hdmi/micro-hdmi/micro-hdmi-kabel-high-speed-2-m-p98652)
 - [ViewSonic 32" LED VX3276-2K-mhd](https://www.komplett.no/product/1018397)
-- TODO: touchscreen
-- TODO: two-way mirror
-- TODO: frame
+- IR Touch Screen, for example [this](https://www.amazon.com/gp/product/B07W3RW7X5/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
+- Two-way mirror, for example [Pilkington MirrorView](https://www.pilkington.com/nb-no/no/produkter/funksjonsglass/spesialglass/pilkington-mirroview)
 
 ## Preconditions
 - Fresh installation of _Raspberry Pi OS with Desktop_ (Buster) installed (tip: use [Raspberry Pi Imager](https://www.raspberrypi.org/software/))

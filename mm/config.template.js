@@ -105,6 +105,54 @@ var config = {
       config: {
         useMMMFaceRecoDNN: true
       }
+    },
+    {
+      module: "MMM-Spotify",
+      position: "bottom_left",
+      config: {
+        debug: false, // debug mode
+        style: "mini", // "default" or "mini" available (inactive for miniBar)
+        moduleWidth: 360, // width of the module in px
+        control: "default", // "default" or "hidden"
+        showAlbumLabel: false, // if you want to show the label for the current song album
+        showVolumeLabel: false, // if you want to show the label for the current volume
+        showAccountName: false, // also show the current account name in the device label; usefull for multi account setup
+        showAccountButton: false, // if you want to show the "switch account" control button
+        showDeviceButton: true, // if you want to show the "switch device" control button
+        useExternalModal: false, // if you want to use MMM-Modal for account and device popup selection instead of the build-in one (which is restricted to the album image size)
+        updateInterval: 1000, // update interval when playing
+        idleInterval: 30000, // update interval on idle
+        defaultAccount: 0, // default account number, attention : 0 is the first account
+        defaultDevice: null, // optional - if you want the "SPOTIFY_PLAY" notification to also work from "idle" status, you have to define your default device here (by name)
+        allowDevices: [], //If you want to limit devices to display info, use this. f.e. allowDevices: ["RASPOTIFY", "My Home speaker"],
+        onStart: null, // disable onStart feature with `null`
+        // if you want to send custom notifications when suspending the module, f.e. switch MMM-Touch to a different "mode"
+        notificationsOnSuspend: [
+          {
+            notification: "TOUCH_SET_MODE",
+            payload: "myNormalMode",
+          },
+          {
+            notification: "WHATEVERYOUWANT",
+            payload: "sendMe",
+          }
+        ],
+        // if you want to send custom notifications when resuming the module, f.e. switch MMM-Touch to a different "mode"
+        notificationsOnResume: [
+          {
+            notification: "TOUCH_SET_MODE",
+            payload: "mySpotifyControlMode",
+          },
+        ],
+        deviceDisplay: "Listening on ", // text to display in the device block (default style only)
+        volumeSteps: 5, // in percent, the steps you want to increase or decrese volume when reacting on the "SPOTIFY_VOLUME_{UP,DOWN}" notifications
+        // miniBar is no longer supported, use at your own "risk". Will be removed in a future version
+        miniBarConfig: {
+          album: false, // display Album name in miniBar style
+          scroll: true, // scroll title / artist / album in miniBar style
+          logo: false, // display Spotify logo in miniBar style
+        }
+      }
     }
   ]
 };
