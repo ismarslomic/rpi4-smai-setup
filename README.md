@@ -29,6 +29,10 @@ Eben Kouao which you can read more about at
   installation with required libs for face recognition with Open CV and Deep Neural Network
 - [MagicMirror²](https://magicmirror.builders/) module [MMM-SmartTouch](https://github.com/EbenKouao/MMM-SmartTouch)
   installation for controlling MagicMirror² using a touchscreen
+- [MagicMirror²](https://magicmirror.builders/) module [MMM-Spotify](https://github.com/skuethe/MMM-Spotify)
+  installation for controlling Spotify (requires manual configuration after setup)
+- [MagicMirror²](https://magicmirror.builders/) module [MMM-GoogleTrafficTimes](https://github.com/pjestico/MMM-GoogleTrafficTimes)
+  installation for displaying traffic time between locations (requires manual configuration after setup)
 - [PM2](https://pm2.io/) installation for auto starting [MagicMirror²](https://magicmirror.builders/) on boot
 - Rpi configuration
   - Disable Screen Blanking to avoid screen going black when no interaction
@@ -61,8 +65,7 @@ your spec as well.
 - Raspberry Pi Camera Module v2 connected
 - Your Rpi is connected to the internet, either through WiFi or wired  
 - [OpenWeather API key](https://home.openweathermap.org/api_keys) in order to use the default 
-  modules [currentweather](https://docs.magicmirror.builders/modules/currentweather.html)
-  and [weatherforecast](https://docs.magicmirror.builders/modules/weatherforecast.html)
+  modules [weather](https://docs.magicmirror.builders/modules/weather.html)
 
 ## Installation
 Open Terminal in Rpi and execute these commands (might take a couple of minutes, be patient)

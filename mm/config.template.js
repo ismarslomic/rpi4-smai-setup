@@ -153,6 +153,20 @@ var config = {
           logo: false, // display Spotify logo in miniBar style
         }
       }
+    },
+    {
+      module: 'MMM-GoogleTrafficTimes',
+      position: 'top_left',
+      config: {
+        key: '<GOOGLE MAP API KEY>',
+        origin: '<Address of origin location>',
+        destination1: '<Address of destination 1>',
+        destination2: '',
+        destination3: '',
+        AvoidHighways: false,
+        AvoidTolls: false,
+
+      },
     }
   ]
 };
