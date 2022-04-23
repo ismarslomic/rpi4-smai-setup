@@ -72,8 +72,8 @@ function installDlib() {
 function installOpenCvAndFaceRecognition() {
   e_note "Installing OpenCv and Face recognition"
 
-  pip3 install numpy
-  pip3 install scikit-image
+  pip3 install numpy --upgrade
+  pip3 install scikit-image --upgrade
 
   sudo apt-get install -y python3-scipy \
     libjasper-dev \
@@ -82,7 +82,7 @@ function installOpenCvAndFaceRecognition() {
     libqt4-test
 
   pip3 install opencv-python==3.4.6.27
-  pip3 install face_recognition
+  pip3 install face_recognition --upgrade
 }
 
 function installFaceRecognitionSmai() {

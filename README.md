@@ -60,7 +60,7 @@ your spec as well.
 - Two-way mirror, for example [Pilkington MirrorView](https://www.pilkington.com/nb-no/no/produkter/funksjonsglass/spesialglass/pilkington-mirroview)
 
 ## Preconditions
-- Fresh installation of _Raspberry Pi OS with Desktop_ (Buster) installed (tip: use [Raspberry Pi Imager](https://www.raspberrypi.org/software/))
+- Fresh installation of _Raspberry Pi OS with Desktop_ (Buster or Bullseye) installed (tip: use [Raspberry Pi Imager](https://www.raspberrypi.org/software/))
 - You are logged in as default user `pi` in Rpi
 - Raspberry Pi Camera Module v2 connected
 - Your Rpi is connected to the internet, either through WiFi or wired  
@@ -94,6 +94,10 @@ With your MagicMirror running via PM2, you have some handy tools at hand:
 ````shell
 pm2 restart mm
 ````
+#### Reloading your app
+````shell
+pm2 reload mm
+````
 #### Stopping your MagicMirror²
 ````shell
 pm2 stop mm
@@ -102,9 +106,9 @@ pm2 stop mm
 ````shell
 pm2 logs mm
 ````
-#### Show the MagicMirror² process information
+#### Monitor all processes
 ````shell
-pm2 show mm
+pm2 monit
 ````
 
 ## Connect to your Rpi from other machine
