@@ -1,13 +1,13 @@
 #!/bin/bash
 
 function main() {
-  STATUS="$(vcgencmd display_power | tail -c 2 | head -c 1)"
+  export DISPLAY=:0
 
-  if [ "${STATUS}" = 1 ]; then
-    echo 0
+  if xrandr --listactivemonitors | grep -q "HDMI-1"; then
+    echo 0 # enabled
     exit 0
   else
-    echo -1
+    echo -1 # disabled
     exit 0
   fi
 }

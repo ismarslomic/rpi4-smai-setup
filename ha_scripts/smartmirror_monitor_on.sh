@@ -1,7 +1,8 @@
 #!/bin/bash
 
 function main() {
-  vcgencmd display_power 1
+    export DISPLAY=:0
+    xrandr --output HDMI-1 --auto
 }
 
 main
