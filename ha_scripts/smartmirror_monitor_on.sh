@@ -1,8 +1,7 @@
 #!/bin/bash
 
 function main() {
-    export DISPLAY=:0
-    xrandr --output HDMI-1 --auto
+  xrandr -display :0 --output HDMI-1 --auto --rotate left
 }
 
 main
