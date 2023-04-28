@@ -23,6 +23,15 @@ $ smartmirror_monitor_on.sh
 $ smartmirror_monitor_status.sh
 ```
 
+### Monitor brightness
+```(bash)
+# Set monitor brightness for daytime
+$ smartmirror_monitor_brightness_day.sh
+
+# Set monitor brightness for nighttime
+$ smartmirror_monitor_brightness_night.sh
+```
+
 ### Magic Mirror start/stop/status
 ```(bash)
 # Turn off monitor

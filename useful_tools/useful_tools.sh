@@ -14,7 +14,11 @@ function main() {
 
   sudo apt-get install -y xclip \
     vim \
-    jq
+    jq \
+    ddccontrol \
+    gddccontrol \
+    ddccontrol-db \
+    i2c-tools
 
   e_success "Installing useful tools completed"
 }
