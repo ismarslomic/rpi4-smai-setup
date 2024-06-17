@@ -10,9 +10,9 @@ source "$DIR/../log_util/log.sh"
 trap e_onScriptFailed 1 2 3 15 ERR
 
 function main() {
-  e_header "Installing Node 18.x"
+  e_header "Installing Node 20.x"
 
-  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
   sudo apt install -y nodejs
   sudo npm install -g npm
 }
