@@ -37,3 +37,15 @@ function monitorStatusBinary(){
     exit 0
   fi
 }
+
+function docker-prune(){
+  sudo docker image prune --all -f
+}
+
+function docker-pull-up(){
+  sudo docker compose pull && sudo docker compose up -d
+}
+
+function update(){
+  sudo apt update && sudo apt full-upgrade -y
+}
