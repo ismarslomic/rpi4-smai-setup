@@ -1,7 +1,9 @@
 #!/bin/bash
 
 function main() {
-  if xrandr -display :0 --listactivemonitors | grep -q "HDMI-1"; then
+  STATUS=$(wlr-randr | grep -A 2 "HDMI-A-1" | grep "Enabled" | awk '{print $2}')
+
+  if [ "$STATUS" == "yes" ]; then
     echo 0 # enabled
     exit 0
   else
