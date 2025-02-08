@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -f /var/run/reboot-required ]; then
+    echo -e "\033[1;31m*** System restart required ***\033[0m"
+fi

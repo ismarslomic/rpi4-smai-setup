@@ -82,6 +82,7 @@ function main() {
   bash "$DIR"/mm_modules/install_mmm_google_traffic_times.sh
   bash "$DIR"/pm2/pm2.sh
   bash "$DIR"/mm/copy_mm_config.sh "$mm_language" "$ow_location" "$ow_api_key"
+  bash "$DIR"/motd/motd.sh
 
   # Home assistant bash scripts
   bash "$DIR"/ha_scripts/copy_ha_scripts.sh

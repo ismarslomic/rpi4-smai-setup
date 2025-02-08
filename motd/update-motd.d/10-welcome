@@ -1,0 +1,44 @@
+#!/bin/bash
+
+function color (){
+  echo "\e[$1m$2\e[0m"
+}
+
+function findDeviceModel (){
+  deviceName=""
+  local deviceModel=$(tr -d '\0' < /sys/firmware/devicetree/base/model)
+  local hostName=$(hostname)
+
+  if [ $hostName ]; then
+    deviceName="$deviceModel - $hostName"
+  else
+    deviceName="$deviceModel"
+  fi
+}
+
+deviceColor="38;5;16;48;5;249"
+greetingsColor="38;5;103"
+userColor="38;5;16;48;5;67"
+codenameColor="38;5;108"
+me=$(logname)
+findDeviceModel
+
+# Device Info
+deviceLabel=" $(color $deviceColor " $deviceName ")"
+
+# Greetings
+[ -r /etc/lsb-release ] && . /etc/lsb-release
+
+if [ -z "$DISTRIB_DESCRIPTION" ] && [ -x /usr/bin/lsb_release ]; then
+	# Fall back to using the very slow lsb_release utility
+	DISTRIB_DESCRIPTION=$(lsb_release -s -d)
+fi
+
+greetings="$(color $codenameColor " * $DISTRIB_DESCRIPTION")\n"
+
+# OS
+greetings="$greetings$(color $greetingsColor " * $(uname -snrvm)")"
+
+# Print
+echo -e "\n$deviceLabel"
+echo -e "\n$greetings"

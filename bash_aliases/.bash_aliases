@@ -47,5 +47,21 @@ function docker-pull-up(){
 }
 
 function update(){
-  sudo apt update && sudo apt full-upgrade -y
+  { echo -e "\e[30;48;5;248mUpdate Packages\e[0m"; } 2> /dev/null
+  sudo apt update
+
+  { echo -e "\n\e[30;48;5;248mFull Upgrade Packages\e[0m"; } 2> /dev/null
+  sudo apt full-upgrade -y
+
+  { echo -e "\n\e[30;48;5;248mRemove Dependency Packages That Are No Longer Needed\e[0m"; } 2> /dev/null
+  sudo apt --purge autoremove -y
+
+  { echo -e "\n\e[30;48;5;248mClean apt Cache\e[0m"; } 2> /dev/null
+  sudo apt clean -y
+
+  { echo -e "\n\e[30;48;5;248mUpdate Static Motd - Dynamic Folder File /etc/update-motd.d/20-update\e[0m"; } 2> /dev/null
+  sudo run-parts /etc/update-motd-static.d
+
+  { echo -e "\n\e[30;48;5;248mCheck if reboot is required\e[0m"; } 2> /dev/null
+  sudo /etc/update-motd.d/25-reboot-required
 }
